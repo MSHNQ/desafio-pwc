@@ -1,11 +1,11 @@
-from .desafios.reverterOrdem import reverseOrder
-from .desafios.removerChar import removeChars
-from .desafios.primeiroCaps import uppercase
-from .desafios.palindromoLongo import longestPal
-from .desafios.anagramaPalindromo import anaPal
+import sys
+sys.path.insert(0, '.')  
+
+from testes.tests import test_reverseOrder, test_removeChars, test_longestPal, test_uppercase, test_anagPal
 
 
 def main():
+   
     while True:
         print("MENU:")
         print("0 - Encerrar o programa")
@@ -21,17 +21,18 @@ def main():
             print("Encerrando o programa...")
             break
         elif opcao == "1":
-            reverseOrder()
+            test_reverseOrder()
         elif opcao == "2":
-            removeChars()
+            test_removeChars()
         elif opcao == "3":
-            uppercase()
+            test_uppercase()
         elif opcao == "4":
-            longestPal()
+            print(test_longestPal())
         elif opcao == "5":
-            anaPal()
+            print(test_anagPal())
         else:
             print("Opção inválida. Insira um número entre 0 e 5.")
 
 if __name__ == "__main__":
+
     main()
